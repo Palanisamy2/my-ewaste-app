@@ -1,0 +1,79 @@
+.Report-container {
+    display: flex;
+    flex-direction: column;
+    height: max-content;   
+}
+
+.Report-background {
+    background: url("../assets/images/recyle-loso-with-green.jpg") no-repeat center center fixed;
+    width: 100%;
+    height: max-content;
+    background-size: cover;
+}
+
+.Report-form-container {
+    width: 50%;
+    height: max-content;
+    padding: 20px;
+    margin: 10px auto;
+    background-color: #d3e9cf;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+}
+
+.Report-form-container:focus-within {
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 1 !important;
+    transition: all 0.6s ease-in-out;
+}
+
+.Report-form-container textarea{
+    width: 90%;
+    height: 100px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.Report-address-inputs  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    margin: 10px 10px;
+}
+
+.Report-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    margin: 10px 10px;
+}
+
+.Report-address-inputs input {
+    width: 70%;
+    height: 30px;
+    /* margin: 10px auto !important; */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.report-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.report-submit-btn {
+    margin: 10px auto;
+}
+
+.Report-form-container .report-submit-btn , .Report-form-container .report-analyze-btn  {
+    
+    margin: 4px 300px;
+    
+}

@@ -1,0 +1,153 @@
+/* .register-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+    text-align: center;
+}
+
+.container {
+    margin-top: 0px !important;
+    opacity: 0.9;
+}
+
+.container:focus-within {
+    background-color: #dde3e1; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+
+.register-btn {
+    width: 100px;
+    margin: 10px auto;
+}
+
+
+.register-background {
+    padding-top: 100px;
+    background: url("../assets/images/recyle-loso-with-green.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+    
+*/
+
+/* body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f6f9fc, #d9e6f3);
+    height: 100vh;
+  } */
+  
+  .register-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("../assets/images/recyle-loso-with-green.jpg") no-repeat center center fixed;
+    background-size: cover;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .register-card {
+    opacity: 0.9 !important;
+    background-color: #d3e9cf;
+    width: 550px;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    text-align: center;
+    animation: slideUp 1.5s ease;
+  
+}
+
+.register-card:focus-within {
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 1 !important;
+    transition: all 0.6s ease-in-out;
+}
+  
+  .register-card h2 {
+    margin-bottom: 20px;
+    color: #2a2a2a;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #7fc9ec;
+    outline: none;
+    box-shadow: 0 0 5px rgba(127, 201, 236, 0.5);
+  }
+  
+  .register-btn {
+    width: 100%;
+    padding: 10px;
+
+    background: #0fa407;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .register-btn:hover {
+    background: #212323;
+  }
+  
+  .profile-img-preview img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+  }
+  
+  .profile-img-preview img:hover {
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+   
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInlogin {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  

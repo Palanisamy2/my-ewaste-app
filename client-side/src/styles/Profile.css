@@ -1,0 +1,109 @@
+/* .profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-logo {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(212, 212, 212);
+    border-radius: 50px;
+} */
+body {
+  background-color: #f0f2f5;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.profile-card {
+  background: linear-gradient(145deg, #ffffff, #f4f4f4);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.005);
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #667eea;
+  transition: transform 0.3s ease;
+}
+
+.profile-details p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 1rem 0;
+}
+
+.stats-section, .co2-section {
+  font-size: 16px;
+  color: #444;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.profile-btn {
+  flex: 1 1 48%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  background: #667eea;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-btn:hover {
+  background: #5a67d8;
+}
+
+.logout {
+  background-color: #e53e3e;
+}
+
+.logout:hover {
+  background-color: #c53030;
+}

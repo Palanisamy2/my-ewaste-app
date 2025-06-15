@@ -1,0 +1,68 @@
+.image-scroll-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden; /* Hides the horizontal scrollbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .scrollContainerStyle {
+    display: flex;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    scroll-behavior: smooth;
+    width: 100%;
+    white-space: nowrap;
+  }
+  
+  .imageStyle {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  /* Left and Right Navigation Icons */
+  .iconStyle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .leftIcon {
+    left: 10px;
+  }
+  
+  .rightIcon {
+    right: 10px;
+  }
+  
+  /* Dots Navigation */
+  .dotsContainerStyle {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .dotStyle {
+    color: white;
+    font-size: 0.8rem;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .activeDotStyle {
+    color: yellow;
+    font-size: 1rem;
+  }
+  

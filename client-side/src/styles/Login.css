@@ -1,0 +1,139 @@
+/* .login-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+    text-align: center;
+}
+
+.container {
+    margin-top: 0px !important;
+    opacity: 0.9;
+}
+
+.container:focus-within {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+
+.login-btn {
+    width: 100px;
+    margin: 10px auto;
+}
+
+.login-background {
+    padding-top: 100px;
+    background: url("../assets/images/recyle-loso-with-green.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+} */
+
+/* Login.css */
+.login-background {
+    background: url("../assets/images/recyle-loso-with-green.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  .login-container {
+    background-color: #d3e9cf;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 580px;
+    text-align: center;
+    animation: slideUp 0.8s ease;
+  }
+
+  .login-container:focus-within {
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 1 !important;
+    transition: all 0.6s ease-in-out;
+}
+
+  
+  .login-container h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  .login-container input {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border 0.3s ease;
+    font-size: 15px;
+  }
+  
+  .login-container input:focus {
+    border-color: #667eea;
+    outline: none;
+  }
+  
+  .login-btn {
+    margin-top: 10px;
+    width: 100%;
+    background: #0fa407;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background: #212323;
+  }
+
+  .password-input-container {
+    position: relative;
+}
+
+.password-input-container input {
+    padding-right: 30px; /* To make space for the icon inside */
+}
+
+.password-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.password-icon.show {
+    color: #667eea; /* Change color when visible */
+}
+
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  

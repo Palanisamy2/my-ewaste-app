@@ -1,0 +1,89 @@
+/* .reward-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reward-background {
+    background: url("../assets/images/recyle-loso-with-green.jpg") no-repeat center center fixed;
+    width: 100%;
+    height: 100dvh;
+    background-size: cover;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+}
+
+.reward-form-container {
+    width: 100%;
+    height: 100dvh;
+    padding: 20px;
+   
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(245, 255, 241);
+    opacity: 0.9;
+    
+
+} */
+
+.reward-container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+    background: #f7fafc;
+    min-height: 100vh;
+  }
+  
+  .reward-background {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .reward-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+  }
+  
+  .reward-form-container p {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+  }
+  
+  .reward-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .reward-card {
+    background: #edf2f7;
+    border-radius: 16px;
+    padding: 1.5rem;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .reward-card:hover {
+    background: #e2e8f0;
+  }
+  
+  .reward-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
