@@ -7,12 +7,13 @@ const cors = require("cors");
 const path = require("path");
 const app = express();
 
-// Serve frontend from Vite build output
-app.use(express.static(path.join(__dirname, "../client-side/dist")));
+const __dirname = path.resolve();
 
-// React routing fallback
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client-side/dist/index.html"));
+// Serve frontend build
+app.use(express.static(path.join(__dirname, '../client-side/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client-side/dist/index.html'));
 });
 
 const port = process.env.PORT || 5000;
