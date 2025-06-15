@@ -8,7 +8,6 @@ const path = require("path");
 const app = express();
 
 const __dirname = path.resolve();
-
 // Serve frontend build files
 app.use(express.static(path.join(__dirname, "../../client-side/dist")));
 
