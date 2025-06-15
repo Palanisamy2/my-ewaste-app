@@ -9,11 +9,10 @@ const app = express();
 
 const __dirname = path.resolve();
 
-// Serve frontend build
-app.use(express.static(path.join(__dirname, '../client-side/dist')));
+app.use(express.static(path.join(__dirname, '../../client/dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client-side/dist/index.html'));
+  res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 });
 
 const port = process.env.PORT || 5000;
