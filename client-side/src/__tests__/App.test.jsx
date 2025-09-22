@@ -1,68 +1,67 @@
-import { render } from "@testing-library/react";
-import app from "./app.js";
-import { Home } from "lucide-react";
+import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import ReportEwaste from "../components/ReportEwaste.jsx";
-import Register from "../components/Register.jsx";
-import Login from "../components/Login.jsx";
-import Rewards from "../components/Rewards.jsx";
-import Profile from "../components/Profile.jsx";
+import App from "../App";
 
-test('test rendering of APP.js', () =>
-    {
-       it('render home component', () => {
-        render(
-        <MemoryRouter initialEntries={['/']}>
-        <Home />
-        </MemoryRouter>)
+describe("App Component", () => {
 
-            const HomeElement = screen.getByTestId(/Welcome to E-Waste Management Platform/i);
-            expect(HomeElement).toBeInTheDocument();
-     });
+  it("renders Home route", () => {
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>
+    );
+    const homeElement = screen.getByText(/Welcome to E-Waste Management Platform/i); // use actual text in Home
+    expect(homeElement).toBeInTheDocument();
+  });
 
-        it('render Report component', () => {
-            render(
-            <MemoryRouter initialEntries={['/report']}>
-            <ReportEwaste />
-            </MemoryRouter>)
-            const ReportEwasteElement = screen.getByTestId(/Report E-Waste/i);
-            expect(ReportEwasteElement).toBeInTheDocument();
-     });
+  it("renders ReportEwaste route", () => {
+    render(
+      <MemoryRouter initialEntries={["/report"]}>
+        <App />
+      </MemoryRouter>
+    );
+    const reportElement = screen.getByText(/Report E-Waste/i); // actual text from component
+    expect(reportElement).toBeInTheDocument();
+  });
 
-        it('render Register component', () => {
-            render(
-            <MemoryRouter initialEntries={['/register']}>
-            <Register />
-            </MemoryRouter>)
-                const RegisterElement = screen.getByTestId(/Create Your Profile/i);
-                expect(RegisterElement).toBeInTheDocument();
-     });
+  it("renders Register route", () => {
+    render(
+      <MemoryRouter initialEntries={["/register"]}>
+        <App />
+      </MemoryRouter>
+    );
+    const registerElement = screen.getByText(/Create Your Profile/i); // actual text in Register
+    expect(registerElement).toBeInTheDocument();
+  });
 
-        it('render Login component', () => {
-            render(
-            <MemoryRouter initialEntries={['/login']}>
-            <Login />
-            </MemoryRouter>)
-                const Loginlement = screen.getByTestId(/May I know who you are?/i);
-                expect(Loginlement).toBeInTheDocument();
-     });
+  it("renders Login route", () => {
+    render(
+      <MemoryRouter initialEntries={["/login"]}>
+        <App />
+      </MemoryRouter>
+    );
+    const loginElement = screen.getByText(/May I know who you are/i); // actual text in Login
+    expect(loginElement).toBeInTheDocument();
+  });
 
-        it('render Reward component', () => {
-            render(
-            <MemoryRouter initialEntries={['/rewards']}>
-            <Rewards />
-            </MemoryRouter>)
-                const RewardElement = screen.getByTestId(/Your Rewards/i);
-                expect(RewardElement).toBeInTheDocument();
-     });
+  it("renders Rewards route", () => {
+    render(
+      <MemoryRouter initialEntries={["/rewards"]}>
+        <App />
+      </MemoryRouter>
+    );
+    const rewardElement = screen.getByText(/Your Rewards/i); // actual text in Rewards
+    expect(rewardElement).toBeInTheDocument();
+  });
 
-        it('render Profile component', () => {
-            render(
-            <MemoryRouter initialEntries={['/profile']}>
-            <Profile />
-            </MemoryRouter>)
-            const ProfileElement = screen.getByTestId(/Reports Submitted:/i);
-            expect(ProfileElement).toBeInTheDocument();
-     });
-    }
-);
+  it("renders Profile route", () => {
+    render(
+      <MemoryRouter initialEntries={["/profile"]}>
+        <App />
+      </MemoryRouter>
+    );
+    const profileElement = screen.getByText(/Reports Submitted:/i); // actual text in Profile
+    expect(profileElement).toBeInTheDocument();
+  });
+
+});
