@@ -68,7 +68,7 @@ const Login = () => {
                     </div>
                     <button className='login-btn' onClick={handleLogin}>Login</button>
                     <p style={{ marginTop: '1rem', color: '#666' }}>
-                        Don't have an account? <a href="/register" style={{ color: '#667eea', fontWeight: 'bold' }}>Register</a>
+                        Don't have any account? <a href="/register" style={{ color: '#667eea', fontWeight: 'bold' }}>Register</a>
                     </p>
                 </div>
             </div>
