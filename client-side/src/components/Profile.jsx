@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import axios from "axios";
 import '../styles/Profile.css';
 
-const ProfilePage = () => {
+const Profile = () => {
   const [storereport, setStoreReport] = useState([]);
   const [totalCO2, setTotalCO2] = useState(0);
 
@@ -145,4 +145,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default Profile;
