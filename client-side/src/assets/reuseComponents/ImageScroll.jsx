@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; 
 import { FaCircle, FaRegCircle } from "react-icons/fa"; 
-import "./ImageScroll.css"; 
+import "./Imagescroll.css"; 
 import imag1 from '../images/computers-waste.jpg';
 import imag2 from "../images/Corporate IT Recycling Drives_ Steps for Success.jpg";
 import imag3 from "../images/earth-with-environment.jpg";
