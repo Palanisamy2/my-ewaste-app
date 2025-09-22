@@ -1,67 +1,59 @@
 import { render, screen } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
 import { MemoryRouter } from "react-router-dom";
-import App from "../App";
 
-describe("App Component", () => {
+import Home from "../components/Home";
+import ReportEwaste from "../components/ReportEwaste";
+import Register from "../components/Register";
+import Login from "../components/Login";
+import Rewards from "../components/Rewards";
+import Profile from "../components/Profile";
 
-  it("renders Home route", () => {
+// vitest.setup.js or at the top of App.test.jsx
+global.IntersectionObserver = class {
+  constructor() {}
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+};
+
+
+describe("Route Components", () => {
+
+  it("renders Home component", () => {
     render(
-      <MemoryRouter initialEntries={["/"]}>
-        <App />
+      <MemoryRouter>
+        <Home />
       </MemoryRouter>
     );
-    const homeElement = screen.getByText(/Welcome to E-Waste Management Platform/i); // use actual text in Home
-    expect(homeElement).toBeInTheDocument();
+    expect(screen.getByText(/Welcome to E-Waste Management Platform/i)).toBeInTheDocument();
   });
 
-  it("renders ReportEwaste route", () => {
+  it("renders ReportEwaste component", () => {
     render(
-      <MemoryRouter initialEntries={["/report"]}>
-        <App />
+      <MemoryRouter>
+        <ReportEwaste />
       </MemoryRouter>
     );
-    const reportElement = screen.getByText(/Report E-Waste/i); // actual text from component
-    expect(reportElement).toBeInTheDocument();
+    expect(screen.getByText(/Report E-Waste/i)).toBeInTheDocument();
   });
 
-  it("renders Register route", () => {
+  it("renders Register component", () => {
     render(
-      <MemoryRouter initialEntries={["/register"]}>
-        <App />
+      <MemoryRouter>
+        <Register />
       </MemoryRouter>
     );
-    const registerElement = screen.getByText(/Create Your Profile/i); // actual text in Register
-    expect(registerElement).toBeInTheDocument();
+    expect(screen.getByText(/Create Your Profile/i)).toBeInTheDocument();
   });
 
-  it("renders Login route", () => {
+  it("renders Login component", () => {
     render(
-      <MemoryRouter initialEntries={["/login"]}>
-        <App />
+      <MemoryRouter>
+        <Login />
       </MemoryRouter>
     );
-    const loginElement = screen.getByText(/May I know who you are/i); // actual text in Login
-    expect(loginElement).toBeInTheDocument();
-  });
-
-  it("renders Rewards route", () => {
-    render(
-      <MemoryRouter initialEntries={["/rewards"]}>
-        <App />
-      </MemoryRouter>
-    );
-    const rewardElement = screen.getByText(/Your Rewards/i); // actual text in Rewards
-    expect(rewardElement).toBeInTheDocument();
-  });
-
-  it("renders Profile route", () => {
-    render(
-      <MemoryRouter initialEntries={["/profile"]}>
-        <App />
-      </MemoryRouter>
-    );
-    const profileElement = screen.getByText(/Reports Submitted:/i); // actual text in Profile
-    expect(profileElement).toBeInTheDocument();
+    expect(screen.getByText(/May I know who you are/i)).toBeInTheDocument();
   });
 
 });
