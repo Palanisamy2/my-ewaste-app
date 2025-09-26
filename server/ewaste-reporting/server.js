@@ -6,7 +6,7 @@ const FormData = require("form-data");
 const cors = require("cors");
 const path = require("path");
 const app = express();
-const db = require('../config/database');
+const db = require('./config/database');
 
 const port = process.env.PORT || 5000;
 
