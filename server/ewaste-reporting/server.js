@@ -107,9 +107,4 @@ app.post("/api/reports", upload.array("images"), async (req, res) => {
 // FRONTEND_URL=http://localhost:5173
 // PORT=5000
 
-db.query('SELECT NOW()')
-  .then(res => console.log('DB time:', res.rows[0]))
-  .catch(err => console.error('DB connection failed:', err));
-
-
 app.listen(port, () => console.log(`Server running on port ${port}`));

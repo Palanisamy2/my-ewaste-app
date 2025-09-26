@@ -11,6 +11,10 @@ pool.on('connect', () => {
   console.log('Connected to Supabase successfully!');
 });
 
+pool.query('SELECT NOW()')
+    .then(res => console.log('Database time:', res.rows[0]))
+    .catch(err => console.error('DB test failed:', err));
+
 module.exports = {
   query: (text, params) => pool.query(text, params),
 };
