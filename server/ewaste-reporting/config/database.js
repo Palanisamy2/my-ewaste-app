@@ -5,6 +5,7 @@ const pool = new Pool({
   ssl: {
     rejectUnauthorized: false, // necessary for Supabase
   },
+    family: 4, // force IPv4
 });
 
 pool.on('connect', () => {
