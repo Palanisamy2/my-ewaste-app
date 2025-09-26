@@ -78,9 +78,9 @@ app.post("/api/reports", upload.array("images"), async (req, res) => {
 });
 
 // ✅ Serve frontend build files last
-app.use(express.static(path.join(__dirname, "../../client-side/dist")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../client-side/dist/index.html"));
-});
+// app.use(express.static(path.join(__dirname, "../../client-side/dist")));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../../client-side/dist/index.html"));
+// });
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
