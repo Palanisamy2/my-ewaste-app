@@ -101,6 +101,12 @@ app.post("/api/reports", upload.array("images"), async (req, res) => {
 //   res.sendFile(path.join(__dirname, "../../client-side/dist/index.html"));
 // });
 
+// DATABASE_URL=postgres://postgres:Palani20047@localhost:5432/ewaste_project
+// JWT_SECRET=your_secret_key
+// ROBOFLOW_API_KEY = hNHDoYp9FbsbdGof9vsY
+// FRONTEND_URL=http://localhost:5173
+// PORT=5000
+
 db.query('SELECT NOW()')
   .then(res => console.log('DB time:', res.rows[0]))
   .catch(err => console.error('DB connection failed:', err));
