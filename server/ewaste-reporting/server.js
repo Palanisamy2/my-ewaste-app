@@ -11,11 +11,24 @@ require('dotenv').config();
 const port = process.env.PORT || 5000;
 
 // ✅ Enable CORS for frontend communication
+const allowedOrigins = [
+  "https://my-ewaste-app.vercel.app",
+  "http://localhost:5173"  // for local dev
+];
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL,  // your React app
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true
+  origin: function(origin, callback){
+    if(!origin) return callback(null, true); // allow non-browser requests
+    if(allowedOrigins.indexOf(origin) === -1){
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 }));
+
 
 // Middleware to parse JSON & form data
 app.use(express.json());
