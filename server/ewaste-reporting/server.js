@@ -6,13 +6,14 @@ const FormData = require("form-data");
 const cors = require("cors");
 const path = require("path");
 const app = express();
+require('dotenv').config();
 
 const port = process.env.PORT || 5000;
 
 // ✅ Enable CORS for frontend communication
 app.use(cors({
-  origin: "http://localhost:5173",  // your React app
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: process.env.FRONTEND_URL,  // your React app
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
 }));
 

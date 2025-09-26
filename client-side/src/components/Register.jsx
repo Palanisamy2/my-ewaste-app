@@ -1,60 +1,3 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
-// import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import '../styles/Register.css';
-
-// const Register = () => {
-//     const [username, setUsername] = useState('');
-//     const [password, setPassword] = useState('');
-//     const [email, setEmail] = useState('');
-
-//     const handleRegister = async () => {
-//         try {
-//             await axios.post('http://localhost:5000/api/auth/signup', { username, password, email });
-
-//             // ✅ Success toast
-//             toast.success('Registration successful!', {
-//                 position: 'top-right',
-//                 autoClose: 3000,
-//                 hideProgressBar: false,
-//                 closeOnClick: true,
-//                 pauseOnHover: true,
-//                 draggable: true,
-//                 theme: 'colored',
-//             });
-
-//         } catch (error) {
-//             // ❌ Error toast
-//             toast.error('Registration failed! Please try again.', {
-//                 position: 'top-right',
-//                 autoClose: 3000,
-//                 hideProgressBar: false,
-//                 closeOnClick: true,
-//                 pauseOnHover: true,
-//                 draggable: true,
-//                 theme: 'colored',
-//             });
-//         }
-//     };
-
-//     return (
-//         <div className='register-background'>
-//             <div className="container">
-//                 <div className='register-container'>
-//                     <h2>Let me know who you are?</h2>
-//                     <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-//                     <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-//                     <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-//                     <button className='register-btn' onClick={handleRegister}>Register</button>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Register;
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -62,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import '../styles/Register.css';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -109,7 +53,7 @@ const Register = () => {
 
         console.log("Form Data:", formData);
         try {
-            await axios.post('http://localhost:5000/api/auth/signup', formData);
+            await axios.post(`${apiUrl}/api/auth/signup`, formData);
             toast.success('Registration successful!', { theme: 'colored' });
             setFormData({
                 username: '',

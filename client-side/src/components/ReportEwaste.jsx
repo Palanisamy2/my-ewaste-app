@@ -4,6 +4,7 @@ import PhotoCapture from "./PhotoCapture";
 import "../styles/ReportEwaste.css";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const ReportEwaste = () => {
     const [photos, setPhotos] = useState([]);
@@ -135,7 +136,7 @@ const ReportEwaste = () => {
             console.log("Form data prepared for analysis:", formData);
     
             try {
-                const response = await axios.post("http://localhost:5000/api/reports", formData, {
+                const response = await axios.post(`${apiUrl}/api/reports`, formData, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         "Content-Type": "multipart/form-data",
@@ -211,7 +212,7 @@ const ReportEwaste = () => {
         }
      
             try {
-                const report = await axios.post("http://localhost:5000/api/send/reports", formData, {
+                const report = await axios.post(`${apiUrl}/api/send/reports`, formData, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         "Content-Type": "multipart/form-data",

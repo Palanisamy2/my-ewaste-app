@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/Login.css';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -15,7 +16,7 @@ const Login = () => {
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/login', {
+            const response = await axios.post(`${apiUrl}/api/auth/login`, {
                 username,
                 password
             });
@@ -33,6 +34,7 @@ const Login = () => {
 
             navigate('/');
         } catch (error) {
+            console.error('Login error:', error);
             toast.error('Login failed! Please check your credentials.', {
                 position: 'top-center',
                 autoClose: 3000,

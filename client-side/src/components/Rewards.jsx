@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import '../styles/Rewards.css';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const CO2_MAP = {
   battery: 0.4,
@@ -25,7 +26,7 @@ const Rewards = () => {
 
   const fetchReports = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/reports/profile/${userId}`, {
+      const response = await axios.get(`${apiUrl}/api/reports/profile/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
