@@ -10,20 +10,25 @@ require('dotenv').config();
 
 const port = process.env.PORT || 5000;
 
-// ✅ Enable CORS for frontend communication
-const allowedOrigins = [
-  "https://my-ewaste-app.vercel.app",
-  "http://localhost:5173"  // for local dev
-];
+// ✅ Regex to match all Vercel preview URLs for this project
+const vercelPreviewRegex = /^https:\/\/my-ewaste-.*-palanisamy2s-projects\.vercel\.app$/;
 
+// ✅ CORS middleware
 app.use(cors({
-  origin: function(origin, callback){
-    if(!origin) return callback(null, true); // allow non-browser requests
-    if(allowedOrigins.indexOf(origin) === -1){
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); // allow Postman or non-browser requests
+
+    // Allow local dev
+    if (origin === "http://localhost:5173") return callback(null, true);
+
+    // Allow main production frontend
+    if (origin === "https://my-ewaste-app.vercel.app") return callback(null, true);
+
+    // Allow all Vercel preview deployments
+    if (vercelPreviewRegex.test(origin)) return callback(null, true);
+
+    // Block anything else
+    return callback(new Error(`CORS policy: access denied for origin ${origin}`), false);
   },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
