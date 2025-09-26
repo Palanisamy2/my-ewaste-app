@@ -34,6 +34,10 @@ exports.login = async (req, res) => {
     const { username, password } = req.body;
 
     try {
+        if (!username || !password) {
+            return res.status(400).json({ message: "Username and password are required" });
+        }
+        
         const result = await db.query('SELECT * FROM users WHERE username = $1', [username]);
         const user = result.rows[0];
 
@@ -52,6 +56,6 @@ exports.login = async (req, res) => {
         }
     } catch (error) {
         console.error("Login Error:", error);
-        res.status(500).json({ error: 'Login failed' });
+        res.status(500).json({ error: '11 Login failed' });
     }
 };
