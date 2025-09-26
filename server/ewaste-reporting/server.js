@@ -6,7 +6,7 @@ const FormData = require("form-data");
 const cors = require("cors");
 const path = require("path");
 const app = express();
-require('dotenv').config();
+const db = require('../config/database');
 
 const port = process.env.PORT || 5000;
 
@@ -100,5 +100,10 @@ app.post("/api/reports", upload.array("images"), async (req, res) => {
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../../client-side/dist/index.html"));
 // });
+
+db.query('SELECT NOW()')
+  .then(res => console.log('DB time:', res.rows[0]))
+  .catch(err => console.error('DB connection failed:', err));
+
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
